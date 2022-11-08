@@ -7,13 +7,13 @@ import json
 from PIL import Image
 from io import BytesIO
 
-chat_id = 72380774#"@move_to_teriberka"
+
 
 def lambda_handler(event, context):
     main()
 
 def main():
-    bot = telegram.Bot("5427574896:AAExKvRYcHNLrr3x8mO6NDeok1gRL7V3sgU")
+    bot = telegram.Bot("")
     post = "Добрый день\\!\nВ Териберке согодя:\n\n"
 
     post += get_weather()
@@ -35,7 +35,7 @@ def get_weather():
     lon = "35.1458289"
     units = "metric"
     lang = "ru"
-    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=e9926914b5d511f8b56f07386ea86d47&units={units}&lang={lang}"
+    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=&units={units}&lang={lang}"
     j = requests.get(url).json()
     temp = round(j["main"]["temp"])
     feels_like = round(j["main"]["feels_like"])
